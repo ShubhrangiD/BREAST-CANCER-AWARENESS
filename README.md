@@ -17,13 +17,13 @@ This website offers information about breast cancer, including symptoms, risk fa
 
 ## Features
 
-- Informative pages about breast cancer
-- Breast Cancer Prediction system
-- Interactive forum for discussions
-- Data visualization in shades of pink and white
-- Customizable and attractive UI with images and cards
-- Connected pages for "About Breast Cancer," "Patient Resources," and "Research"
-- Search functionality in the navigation bar
+- Informative Pages: Detailed information about breast cancer, including symptoms, risk factors, prevention, and treatment.
+- Breast Cancer Prediction System: Uses machine learning to predict the likelihood of breast cancer based on user input.
+- Interactive Forum: A place for community discussions and support.
+- Data Visualization: Displays data visualizations in shades of pink and white.
+- Attractive UI: Customizable and appealing user interface with images and cards.
+- Search Functionality: Search bar in the navigation bar for easy access to information.
+- Resource Pages: Connected pages for "About Breast Cancer," "Patient Resources," and "Research."
 
 ## Setup and Installation
 
