@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffebf1;
+            color: #333;
+        }
+        .header-image {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .header-image img {
+            width: 100%;
+            height: auto;
+        }
+        .header-image .title {
+            position: absolute;
+            bottom: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3.5em;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            font-family: 'Impact', sans-serif; /* Impact font */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Shadow for better visibility */
+            /*background-color: rgba(0, 0, 0, 0.5);*/
+            padding: 10px 20px;
+        }
+        .section-title {
+            font-size: 4em;
+            color: #e67db8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section-content {
+            margin-bottom: 40px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .card {
+            margin-bottom: 40px;
+        }
+        .card-header {
+            background-color: #e395bb;
+            height: 30%;
+            color: white;
+            font-weight: bold;
+            font-size: 2em;
+        }
+        .card-body img {
+            max-width: 100%;
+        }
+      .navbar {
+            background: #ffe4e1; /* Light pink background */
+            padding: 10px 20px;
+        }
+        .navbar-brand {
+            position: relative;
+            display: inline-block;
+        }
+        .navbar-brand img {
+            height: 40px; /* Logo height */
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fce4ec; /* Light pink background for dropdown */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            top: 100%; /* Position dropdown below the logo */
+            left: 0;
+        }
+        .dropdown-content a {
+            color: #d63384; /* Darker pink for links */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8bbd0; /* Hover effect for dropdown links */
+            color: #e55b9e;
+        }
+        .navbar-brand:hover .dropdown-content {
+            display: block;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+        .navbar-nav a {
+            color: #ff69b4; /* Pink color for links */
+            font-weight: bold;
+        }
+        .navbar-nav a:hover {
+            color: #e55b9e; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+                </a>
+                <div class="dropdown-content">
+                    <a href="/predict">Predict Breast Cancer</a>
+                    <a href="/about">About Breast Cancer</a>
+                    <a href="/resources">Patient Resources</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/research">Recent Research</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/forum">Community Forum</a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </style>
+</head>
+<body>
+    <div class="header-image">
+        <img src="{{ url_for('static', filename='Data_analyst.jpg') }}" alt="Data Visualising">
+        <div class="title">DATA ANALYSIS</div>
+    </div>
+    <div class="container my-4">
+        <!-- Distribution of Ages -->
+        <div class="card">
+            <div class="card-header">Distribution of Ages of Women with Breast Cancer</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='age_distribution.png') }}" alt="Age Distribution">
+            </div>
+        </div>
+
+        <!-- Size of the Tumor Based on Grade -->
+        <div class="card">
+            <div class="card-header">Size of the Tumor Based on Grade</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='tumor_size_grade.png') }}" alt="Tumor Size Based on Grade">
+            </div>
+        </div>
+
+        <!-- Estrogen and Progesterone Status Based on Grade -->
+        <div class="card">
+            <div class="card-header">Estrogen and Progesterone Status Based on Grade</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='hormone_status.png') }}" alt="Hormone Status Based on Grade">
+            </div>
+        </div>
+
+        <!-- Tumor Sizes for Different Ages and Survival Months -->
+        <div class="card">
+            <div class="card-header">Tumor Sizes for Different Ages and Survival Months</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='tumor_survival.png') }}" alt="Tumor Sizes and Survival Months">
+            </div>
+        </div>
+
+        <!-- Patient Dead or Alive Based on Differentiation Status -->
+        <div class="card">
+            <div class="card-header">Patient Dead or Alive Based on Differentiation Status</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='differentiation_status.png') }}" alt="Differentiation Status">
+            </div>
+        </div>
+
+        <!-- Distribution Between Regional Node Examined and Regional Node Positive -->
+        <div class="card">
+            <div class="card-header">Distribution Between Regional Node Examined and Regional Node Positive</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='regional_node.png') }}" alt="Regional Node Examined vs Positive">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

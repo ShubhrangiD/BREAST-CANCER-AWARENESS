@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #faaeae;
+            color: #000000;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        .section-title {
+            font-size: 3em;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-family: 'Impact', sans-serif;
+        }
+        .forum-category {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .forum-category h3 {
+            margin-top: 0;
+        }
+        .forum-post {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .forum-post:last-child {
+            border-bottom: none;
+        }
+        .forum-post h4 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        .forum-post p {
+            margin: 0;
+        }
+        .btn-primary {
+            background-color: #fb7b7b;
+            border-color: #fb7b7b;
+        }
+        .btn-primary:hover {
+            background-color: #d44a8f;
+            border-color: #d44a8f;
+        }
+        .navbar {
+            background: #ffe4e1; /* Light pink background */
+            padding: 10px 20px;
+        }
+        .navbar-brand {
+            position: relative;
+            display: inline-block;
+        }
+        .navbar-brand img {
+            height: 40px; /* Logo height */
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fce4ec; /* Light pink background for dropdown */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            top: 100%; /* Position dropdown below the logo */
+            left: 0;
+        }
+        .dropdown-content a {
+            color: #d63384; /* Darker pink for links */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8bbd0; /* Hover effect for dropdown links */
+            color: #e55b9e;
+        }
+        .navbar-brand:hover .dropdown-content {
+            display: block;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+        .navbar-nav a {
+            color: #ff69b4; /* Pink color for links */
+            font-weight: bold;
+        }
+        .navbar-nav a:hover {
+            color: #e55b9e; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+                </a>
+                <div class="dropdown-content">
+                    <a href="/predict">Predict Breast Cancer</a>
+                    <a href="/about">About Breast Cancer</a>
+                    <a href="/data-analysis">Data Analysis</a>
+                    <a href="/resources">Patient Resources</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/research">Recent Research</a>
+                    <a href="/faq">FAQ</a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Forum Introduction Section -->
+        <section id="forum-intro">
+            <h1 class="section-title">Community Forum</h1>
+            <p>Welcome to the community forum! Here you can discuss topics related to breast cancer, share your experiences, and seek support from others. Browse through the categories below or start a new discussion.</p>
+            <a href="#new-topic" class="btn btn-primary">Start New Topic</a>
+        </section>
+        
+        <!-- Forum Categories Section -->
+        <section id="forum-categories">
+            <h2 class="section-title">Forum Categories</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="forum-category">
+                        <h3>General Discussion</h3>
+                        <div class="forum-post">
+                            <h4><a href="#">What is Breast Cancer?</a></h4>
+                            <p>Started by John Doe | 10 replies | 2 days ago</p>
+                        </div>
+                        <div class="forum-post">
+                            <h4><a href="#">Sharing Your Journey</a></h4>
+                            <p>Started by Jane Smith | 15 replies | 3 days ago</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="forum-category">
+                        <h3>Treatment and Research</h3>
+                        <div class="forum-post">
+                            <h4><a href="#">Latest Research Findings</a></h4>
+                            <p>Started by Dr. Brown | 8 replies | 1 week ago</p>
+                        </div>
+                        <div class="forum-post">
+                            <h4><a href="#">Treatment Options</a></h4>
+                            <p>Started by Sarah Lee | 12 replies | 5 days ago</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="forum-category">
+                        <h3>Support and Advice</h3>
+                        <div class="forum-post">
+                            <h4><a href="#">Managing Side Effects</a></h4>
+                            <p>Started by Emily Clark | 20 replies | 2 days ago</p>
+                        </div>
+                        <div class="forum-post">
+                            <h4><a href="#">Finding Support Groups</a></h4>
+                            <p>Started by Mike Johnson | 7 replies | 1 week ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Topics Section -->
+        <section id="recent-topics">
+            <h2 class="section-title">Recent Topics</h2>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">What is the latest in breast cancer research?</h5>
+                    <p class="mb-1">Discussion on recent advancements in research and treatment options.</p>
+                    <small>Started by Dr. Alice | 5 replies | 2 hours ago</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">How to deal with chemotherapy side effects?</h5>
+                    <p class="mb-1">Tips and advice on managing side effects from chemotherapy treatments.</p>
+                    <small>Started by Lucy Green | 12 replies | 1 day ago</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">Personal stories and experiences</h5>
+                    <p class="mb-1">Share your personal stories and support others with similar experiences.</p>
+                    <small>Started by James White | 20 replies | 3 days ago</small>
+                </a>
+            </div>
+        </section>
+
+        <!-- Popular Threads Section -->
+        <section id="popular-threads">
+            <h2 class="section-title">Popular Threads</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h5 class="mb-1"><a href="#">How to prepare for a breast cancer diagnosis?</a></h5>
+                    <p class="mb-1">Discuss strategies and tips for handling a breast cancer diagnosis.</p>
+                    <small>Started by Dr. Emma | 25 replies | 1 week ago</small>
+                </li>
+                <li class="list-group-item">
+                    <h5 class="mb-1"><a href="#">Best practices for post-treatment care</a></h5>
+                    <p class="mb-1">Share and learn about effective post-treatment care practices.</p>
+                    <small>Started by Olivia Smith | 18 replies | 4 days ago</small>
+                </li>
+                <li class="list-group-item">
+                    <h5 class="mb-1"><a href="#">Finding the right support group</a></h5>
+                    <p class="mb-1">Discuss how to find and connect with support groups.</p>
+                    <small>Started by Natalie Johnson | 30 replies | 2 weeks ago</small>
+                </li>
+            </ul>
+        </section>
+
+        <!-- New Topic Section -->
+        <section id="new-topic" class="mt-5">
+            <h2 class="section-title">Start a New Topic</h2>
+            <form>
+                <div class="form-group">
+                    <label for="topicTitle">Topic Title</label>
+                    <input type="text" class="form-control" id="topicTitle" placeholder="Enter topic title">
+                </div>
+                <div class="form-group">
+                    <label for="topicContent">Topic Content</label>
+                    <textarea class="form-control" id="topicContent" rows="5" placeholder="Enter topic content"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Topic</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

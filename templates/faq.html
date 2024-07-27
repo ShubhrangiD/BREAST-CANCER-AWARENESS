@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Breast Cancer Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffebf1;
+            color: #333;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        .section-title {
+            font-size: 3em;
+            color: #e67db8;
+            margin-bottom: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #e395bb;
+            color: white;
+            font-weight: bold;
+        }
+        .card-body {
+            background-color: #fff;
+            color: #333;
+        }
+        .card-body p {
+            margin-bottom: 0;
+        }
+        .navbar {
+            background: #ffe4e1; /* Light pink background */
+            padding: 10px 20px;
+        }
+        .navbar-brand {
+            position: relative;
+            display: inline-block;
+        }
+        .navbar-brand img {
+            height: 40px; /* Logo height */
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fce4ec; /* Light pink background for dropdown */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            top: 100%; /* Position dropdown below the logo */
+            left: 0;
+        }
+        .dropdown-content a {
+            color: #d63384; /* Darker pink for links */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8bbd0; /* Hover effect for dropdown links */
+            color: #e55b9e;
+        }
+        .navbar-brand:hover .dropdown-content {
+            display: block;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+        .navbar-nav a {
+            color: #ff69b4; /* Pink color for links */
+            font-weight: bold;
+        }
+        .navbar-nav a:hover {
+            color: #e55b9e; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+                </a>
+                <div class="dropdown-content">
+                    <a href="/predict">Predict Breast Cancer</a>
+                    <a href="/about">About Breast Cancer</a>
+                    <a href="/data-analysis">Data Analysis</a>
+                    <a href="/resources">Patient Resources</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/research">Recent Research</a>
+                    <a href="/forum">Community Forum</a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="section-title">Frequently Asked Questions (FAQ)</h1>
+        
+        <div class="card">
+            <div class="card-header">
+                What is Breast Cancer?
+            </div>
+            <div class="card-body">
+                <p>Breast cancer is a type of cancer that forms in the cells of the breasts. It can occur in both men and women, though it is far more common in women. It starts when cells in the breast begin to grow uncontrollably, forming a tumor that can often be felt as a lump or seen on an X-ray. Early detection and treatment are crucial for improving outcomes.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                What are the common symptoms of Breast Cancer?
+            </div>
+            <div class="card-body">
+                <p>Common symptoms of breast cancer include:</p>
+                <ul>
+                    <li>A lump or mass in the breast or underarm area</li>
+                    <li>Swelling or changes in the size or shape of the breast</li>
+                    <li>Changes in the skin over the breast, such as redness or dimpling</li>
+                    <li>Unusual discharge from the nipple</li>
+                    <li>Pain in the breast or nipple area</li>
+                </ul>
+                <p>If you experience any of these symptoms, it is important to consult a healthcare provider for evaluation.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                How is Breast Cancer diagnosed?
+            </div>
+            <div class="card-body">
+                <p>Breast cancer is diagnosed through a combination of methods, including:</p>
+                <ul>
+                    <li>Clinical breast examination (CBE)</li>
+                    <li>Mammography (breast X-ray)</li>
+                    <li>Ultrasound</li>
+                    <li>Magnetic Resonance Imaging (MRI)</li>
+                    <li>Biopsy (removing a sample of breast tissue for testing)</li>
+                </ul>
+                <p>These tests help determine the presence, type, and stage of breast cancer.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                What are the treatment options for Breast Cancer?
+            </div>
+            <div class="card-body">
+                <p>Treatment options for breast cancer vary depending on the type and stage of the disease. Common treatments include:</p>
+                <ul>
+                    <li>Surgery (to remove the tumor or breast tissue)</li>
+                    <li>Radiation therapy (to kill cancer cells in a specific area)</li>
+                    <li>Chemotherapy (using drugs to kill cancer cells throughout the body)</li>
+                    <li>Hormone therapy (to block or remove hormones that fuel cancer growth)</li>
+                    <li>Targeted therapy (drugs that target specific cancer cells)</li>
+                </ul>
+                <p>Each treatment plan is personalized based on the patient's specific needs and the characteristics of the cancer.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                How can I reduce my risk of Breast Cancer?
+            </div>
+            <div class="card-body">
+                <p>Reducing the risk of breast cancer involves adopting a healthy lifestyle and considering preventive measures:</p>
+                <ul>
+                    <li>Maintaining a healthy weight</li>
+                    <li>Regular physical activity</li>
+                    <li>Eating a balanced diet rich in fruits and vegetables</li>
+                    <li>Limiting alcohol consumption</li>
+                    <li>Not smoking</li>
+                    <li>Regular screening and mammograms as recommended by your doctor</li>
+                    <li>Genetic testing and preventive surgery if you have a high risk due to family history</li>
+                </ul>
+                <p>Consult with your healthcare provider to discuss strategies for reducing your risk.</p>
+            </div>
+        </div>
+
+        <!-- Add more FAQ items here in a similar format -->
+
+    </div>
+</body>
+</html>

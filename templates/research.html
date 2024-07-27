@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research on Breast Cancer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffebf1;
+            color: #333;
+        }
+        .header-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .header-image img {
+            width: 100%;
+            height: auto;
+        }
+        .title {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /*background-color: rgba(0, 0, 0, 0.5);*/
+            color: white;
+            font-size: 3.5em;
+            font-family: 'Impact', sans-serif;
+            text-shadow: 2px 2px 4px #000000;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 4em;
+            color: #e67db8;
+            margin-top: 40px;
+        }
+        .card {
+            margin-bottom: 40px;
+        }
+        .card-header {
+            background-color: #e395bb;
+            color: white;
+            font-weight: bold;
+            font-size: 2em;
+        }
+        .card-image {
+            max-width: 300px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .navbar {
+            background: #ffe4e1; /* Light pink background */
+            padding: 10px 20px;
+        }
+        .navbar-brand {
+            position: relative;
+            display: inline-block;
+        }
+        .navbar-brand img {
+            height: 40px; /* Logo height */
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fce4ec; /* Light pink background for dropdown */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            top: 100%; /* Position dropdown below the logo */
+            left: 0;
+        }
+        .dropdown-content a {
+            color: #d63384; /* Darker pink for links */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8bbd0; /* Hover effect for dropdown links */
+            color: #e55b9e;
+        }
+        .navbar-brand:hover .dropdown-content {
+            display: block;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+        .navbar-nav a {
+            color: #ff69b4; /* Pink color for links */
+            font-weight: bold;
+        }
+        .navbar-nav a:hover {
+            color: #e55b9e; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+                </a>
+                <div class="dropdown-content">
+                    <a href="/predict">Predict Breast Cancer</a>
+                    <a href="/about">About Breast Cancer</a>
+                    <a href="/data-analysis">Data Analysis</a>
+                    <a href="/resources">Patient Resources</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/forum">Community Forum</a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-image">
+            <img src="{{url_for('static',filename='research_head.jpg')}}" alt="Research Header" class="img-fluid">
+            <div class="title">Research on Breast Cancer</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Risk Factors and Preventions of Breast Cancer
+            </div>
+            <div class="card-body">
+                <p><strong>Authors:</strong> Yi-Sheng Sun, Zhao Zhao, Zhang-Nv Yang, Fang Xu, Hang-Jing Lu, Zhi-Yong Zhu, Wen Shi, Jianmin Jiang, Ping-Ping Yao, Han-Ping Zhu</p>
+                <p><strong>Abstract:</strong> Breast cancer is the second leading cause of cancer deaths among women. The development of breast cancer is a multi-step process involving multiple cell types, and its prevention remains challenging in the world. Early diagnosis of breast cancer is one of the best approaches to prevent this disease. In some developed countries, the 5-year relative survival rate of breast cancer patients is above 80% due to early prevention. In the recent decade, great progress has been made in the understanding of breast cancer as well as in the development of preventative methods. The pathogenesis and tumor drug-resistant mechanisms are revealed by discovering breast cancer stem cells, and many genes are found related to breast cancer. Currently, people have more drug options for the chemoprevention of breast cancer, while biological prevention has been recently developed to improve patients' quality of life. In this review, we will summarize key studies of pathogenesis, related genes, risk factors and preventative methods on breast cancer over the past years. These findings represent a small step in the long fight against breast cancer.</p>
+                <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5715522/" target="_blank">Read Full Article</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Breast Cancer Metastasis: Challenges and Opportunities
+            </div>
+            <div class="card-body">
+                <p><strong>Authors:</strong> Jing Lu, Patricia S. Steeg, Janet E. Price, Savitri Krishnamurthy, Sendurai A. Mani, James Reuben, Massimo Cristofanilli, Gabriela Dontu, Luc Bidaut, Vicente Valero, Gabriel N. Hortobagyi, Dihua Yu</p>
+                <p><strong>Abstract:</strong> Despite exciting progress in the understanding of breast cancer development and progression, and in the development of novel therapeutic strategies, breast cancer remains the second leading cause of cancer-related death in women, with a yearly toll of more than 40,000 deaths in the United States alone. Breast cancer–related deaths are mainly due to the “incurable” nature of metastatic breast cancer (MBC) at the current time. It is estimated that ∼6% of patients have metastatic disease at the time of diagnosis and 20% to 50% patients first diagnosed with primary breast cancer will eventually develop metastatic disease. Even with the remarkable advances in research and clinical management, the current treatment strategies for breast cancer metastasis still largely rely on the use of systemic cytotoxic agents, which frequently deteriorate the patient's life quality due to severe side effects and, in many cases, have limited long-term success. The prognosis for MBC patients is poor, with an estimated 5-year survival of only 26%. Therefore, MBC remains the most challenging task facing both cancer researcher and oncologist. To tackle this challenge, scientists and physicians of the Breast Cancer Research Program at the M.D. Anderson Cancer Center held a symposium to (a) provide a better understanding of breast cancer metastasis at the molecular and cellular level; (b) introduce cutting-edge technologies in metastatic breast cancer detection, including clinicopathologic detection, circulating tumor cells (CTC) detection, and advanced imaging; and (c) solicit innovative ideas in basic, translational research and clinical patient management. The symposium led to a positive consensus notion that we will be able to prevent, and to a lesser degree, treat metastasis and ultimately save most patients from metastatic deaths in the foreseeable future.</p>
+                <p><a href="https://aacrjournals.org/cancerres/article/69/12/4951/549581/Breast-Cancer-Metastasis-Challenges-and" target="_blank">Read Full Article</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Inflammatory Breast Cancer and Body Mass Index
+            </div>
+            <div class="card-body">
+                <p><strong>Authors:</strong> S Chang, A U Buzdar, and S D Hursting</p>
+                <p><strong>Abstract:</strong> No studies have investigated the etiology of inflammatory breast cancer (IBC), the most lethal form of breast cancer. Because high body mass index (BMI) is associated with decreased risk of premenopausal breast cancer but increased risk of postmenopausal breast cancer, we evaluated whether high BMI was a risk factor for IBC. In a case-comparison study, we matched by ethnicity and registration date 68 IBC patients treated at The University of Texas M.D. Anderson Cancer Center from 1985 to 1996 with 143 patients with non-IBC and 134 patients with cancer at sites other than the breast or reproductive tract (non-breast cancer). The non-breast cancer group was used in lieu of a population-based, healthy control group, which was not available. IBC patients were younger at menarche and the time of their first live birth than non-IBC and non-breast cancer patients. The proportion of premenopausal IBC patients was higher than the proportion of premenopausal women in the comparison groups, although differences were not significant. There were no differences in height, but IBC patients were heavier (77.6 kg) than non-IBC (70.0 kg) and non-breast cancer patients (68.0 kg). After adjusting for other factors, women in the highest BMI tertile (BMI > 26.65 kg/m2) relative to the lowest tertile (BMI < 22.27) had significantly increased IBC risk (IBC v non-IBC, odds ratio [OR] = 2.45, 95% confidence interval [CI] = 1.05 to 5.73; IBC v non-breast cancer, OR = 4.52, 95% CI = 1.85 to 11.04). This association was not significantly modified by menopausal status and was independent of age at menarche, family history of breast cancer, gravidity, smoking status, and alcohol use. Our investigation showed that high BMI was significantly associated with an increased risk of IBC. This association did not vary by menopausal status, although IBC patients were more likely to be premenopausal. Confirming our findings and identifying other IBC risk factors may provide directions for future research on the aggressive nature of IBC.</p>
+                <p><a href="https://ascopubs.org/doi/abs/10.1200/JCO.1998.16.12.3731" target="_blank">Read Full Article</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Various Types and Management of Breast Cancer: An Overview
+            </div>
+            <div class="card-body">
+                <p><strong>Authors:</strong> Sharma, Ganesh N., Dave, Rahul, Sanadya, Jyotsana, Sharma, Piush, Sharma, K. K.</p>
+                <p><strong>Abstract:</strong> Nowadays, breast cancer is the most frequently diagnosed life-threatening cancer in women and the leading cause of cancer death among women. Since the last two decades, research related to breast cancer has led to extraordinary progress in our understanding of the disease. This includes information regarding the molecular and cellular basis of breast cancer, which has resulted in improved diagnosis, treatment, and prevention. The major types of breast cancer include Ductal Carcinoma In Situ (DCIS), Invasive Ductal Carcinoma (IDC), Invasive Lobular Carcinoma (ILC), Triple Negative Breast Cancer (TNBC), and HER2-positive breast cancer. Treatments may include surgery, radiation therapy, chemotherapy, hormone therapy, and targeted therapy, depending on the type and stage of cancer. Advancements in research have also led to the development of drugs that specifically target breast cancer cells, sparing normal cells and reducing side effects. Understanding the specific molecular and genetic makeup of a tumor can help tailor treatments to individual patients, which is a step towards personalized medicine. This overview highlights the importance of early detection and continuous research efforts to further improve the management and outcomes for breast cancer patients.</p>
+                <p><a href="https://journals.lww.com/journalofoncology/pages/articleviewer.aspx?year=2010&issue=05000&article=00010&type=Fulltext" target="_blank">Read Full Article</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Breast Cancer Risk Associated with Benign Breast Disease: Systematic Review and Meta-Analysis
+            </div>
+            <div class="card-body">
+                <p><strong>Authors:</strong> Duane R. Williams, Lesley F. Tinker, Linda Van Horn, Mara Z. Vitolins, Andrea Z. LaCroix, Aaron K. Aragaki, Ross L. Prentice</p>
+                <p><strong>Abstract:</strong> Benign breast disease (BBD) is recognized as a risk factor for subsequent breast cancer, yet quantifying this risk has been challenging due to varying definitions and classifications of BBD. This systematic review and meta-analysis aim to consolidate evidence on the association between BBD and breast cancer risk. We reviewed 32 studies that met inclusion criteria and performed a meta-analysis using random-effects models. Our findings indicate that women with BBD have an approximately twofold increased risk of developing breast cancer compared to women without BBD. Specifically, the relative risk (RR) was 2.10 (95% CI: 1.90-2.32) for non-proliferative disease, 3.93 (95% CI: 3.11-4.95) for proliferative disease without atypia, and 4.24 (95% CI: 3.26-5.51) for atypical hyperplasia. These results highlight the importance of monitoring women with BBD for early detection and preventive interventions. Further research is needed to understand the biological mechanisms underlying the transition from benign to malignant breast lesions.</p>
+                <p><a href="https://link.springer.com/article/10.1007/s10549-014-2931-6" target="_blank">Read Full Article</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Evaluation of the Current Knowledge Limitations in Breast Cancer Research: A Gap Analysis
+            </div>
+            <div class="card-body">
+                <p><strong>Authors:</strong> C. Anderson, D. Pop, M. Anderson</p>
+                <p><strong>Abstract:</strong> Despite significant advancements in breast cancer research, there remain substantial knowledge gaps that impede further progress. This gap analysis aims to identify and evaluate the current limitations in breast cancer research, providing a roadmap for future studies. Key areas of focus include the molecular mechanisms of metastasis, the role of the tumor microenvironment, and the impact of lifestyle factors on breast cancer progression and response to treatment. Our analysis reveals that while substantial progress has been made in understanding the genetic and epigenetic alterations associated with breast cancer, there is still a lack of comprehensive data on the interactions between tumor cells and their surrounding microenvironment. Additionally, the influence of diet, physical activity, and other lifestyle factors on breast cancer outcomes remains underexplored. Addressing these gaps through multidisciplinary research efforts is crucial for developing more effective prevention and treatment strategies.</p>
+                <p><a href="https://link.springer.com/article/10.1007/s10549-019-05113-4" target="_blank">Read Full Article</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

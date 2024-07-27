@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffebf1; /* Light pink background */
+            color: #333; /* Dark text color */
+        }
+        .header-image {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .title {
+            font-size: 4em;
+            color: #ff9d9d;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin: 20px 0;
+            text-align: center;
+            font-family: 'Impact', sans-serif;
+        }
+        .card {
+            margin-bottom: 20px;
+            height: 250px; /* Ensuring all cards are of the same size */
+        }
+        .card-header {
+            background-color: #f8aaaa; /* Pink background for card headers */
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .card-body {
+            font-size: 1.1em;
+            overflow-y: auto; /* Ensuring content scrolls if it exceeds card height */
+        }
+        .card-container {
+            margin-top: 20px;
+        }
+        .main-title {
+            font-size: 3em;
+            color: #e67db8;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .navbar {
+            background: #ffe4e1; /* Light pink background */
+            padding: 10px 20px;
+        }
+        .navbar-brand {
+            position: relative;
+            display: inline-block;
+        }
+        .navbar-brand img {
+            height: 40px; /* Logo height */
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fce4ec; /* Light pink background for dropdown */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            top: 100%; /* Position dropdown below the logo */
+            left: 0;
+        }
+        .dropdown-content a {
+            color: #d63384; /* Darker pink for links */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8bbd0; /* Hover effect for dropdown links */
+            color: #e55b9e;
+        }
+        .navbar-brand:hover .dropdown-content {
+            display: block;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+        .navbar-nav a {
+            color: #ff69b4; /* Pink color for links */
+            font-weight: bold;
+        }
+        .navbar-nav a:hover {
+            color: #e55b9e; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+                </a>
+                <div class="dropdown-content">
+                    <a href="/predict">Predict Breast Cancer</a>
+                    <a href="/about">About Breast Cancer</a>
+                    <a href="/data-analysis">Data Analysis</a>
+                    <a href="/resources">Patient Resources</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/research">Recent Research</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/forum">Community Forum</a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <img src="{{ url_for('static', filename='abous_us.jpeg') }}" alt="About Us" class="header-image">
+        <div class="title">About Us</div>
+    </div>
+    <div class="container card-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Our Mission</div>
+                    <div class="card-body">
+                        <p>Our mission is to provide the best breast cancer prediction and analysis tools to help individuals and healthcare professionals make informed decisions.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Our Vision</div>
+                    <div class="card-body">
+                        <p>We envision a world where breast cancer can be detected early and treated effectively, leading to better outcomes for patients worldwide.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Our Team</div>
+                    <div class="card-body">
+                        <p>Our team consists of dedicated professionals with expertise in data analysis, healthcare, and software development, all working together to create innovative solutions for breast cancer detection.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Our Values</div>
+                    <div class="card-body">
+                        <p>We value integrity, innovation, and compassion in everything we do. Our commitment is to provide accurate and reliable information to support the fight against breast cancer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
