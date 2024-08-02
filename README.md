@@ -1,6 +1,6 @@
 # Breast Cancer Awareness Website
 
-Welcome to the Breast Cancer Awareness website project. This project aims to provide information, resources, and tools to raise awareness about breast cancer. The website is built using HTML, CSS, and Flask for backend functionality.
+Welcome to the Breast Cancer Awareness website project. This project aims to provide information, resources, and tools to raise awareness about breast cancer. The website is built using HTML, CSS, and Flask for backend functionality. 
 
 ## Table of Contents
 
